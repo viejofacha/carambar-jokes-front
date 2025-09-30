@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carambar & Co - Blagues</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="brand-hero">
+  <img src="img/carambar-hero.jpg"
+       alt="Carambar — C'est de la barre !"
+       class="brand-hero__img">
+  <!-- <span class="brand-hero__emoji" aria-hidden="true">😅</span> -->
+  <div class="brand-hero__belt" aria-hidden="true"></div>
+</header>
+
+  <main class="container">
+    <div class="card">
+      <p class="question" id="question">Clique sur le bouton pour une blague…</p>
+      <p class="answer" id="answer"></p>
+      <button id="btn">Nouvelle blague aléatoire</button>
+    </div>
+    <p class="note">Source: API v1 - <a id="apiLink" target="_blank" rel="noopener">/api/v1/jokes/random</a></p>
+  </main>
+  <footer class="brand-footer">
+  <img src="img/carambar-mascot.png" alt="Mascota Carambar"
+       class="brand-footer__mascot">
+</footer>
+
+  <script>window.API_BASE = "http://127.0.0.1:3000";</script>
+
+
+  <script src="app.js"></script>
+</body>
+</html>

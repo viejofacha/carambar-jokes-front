@@ -1,0 +1,115 @@
+:root {
+  --carambar-yellow: #ffd600;
+  --carambar-red: #e60012;
+  --ink: #222;
+  --paper: #fff;
+  --bg: #fff7c4;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+/* ====== Tema (light por defecto) ====== */
+:root{
+  --ink:#222;
+  --bg:#fff7c4;
+  --belt:#1c1c1c;           /* banda oscura bajo el hero (como en tu captura) */
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --ink:#eee;
+    --bg:#0f0f10;          /* fondo general en oscuro */
+    --belt:#0f0f10;        /* que la banda se funda con el fondo */
+  }
+}
+/* ====== Cabecera ====== */
+.brand-hero{
+  position: relative;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+.brand-hero__img{
+  /* tu imagen de cabecera */
+   display: block;
+  width: 100%;
+  height: auto;          /* mantiene el ratio automáticamente */
+  background: #ffd600;
+}
+
+/* emoji grande, apoyado sobre la banda oscura */
+.brand-hero__emoji{
+  position: static;      /* <— clave: ya NO absoluto */
+  display: block;
+  font-size: 90px;      /* tamaño fijo en todas las pantallas */
+  line-height: 1;
+  margin-top: -40px;      /* separación respecto a la imagen */
+  margin-left: 90px;     /* colócalo a la izquierda; ajusta a tu gusto */
+  filter: drop-shadow(0 14px 22px rgba(0,0,0,.35));
+}
+@media (max-width: 480px){
+  .brand-hero__emoji{ font-size: 90px; margin-left: 16px; }
+}
+
+/* banda oscura debajo del hero (como en la captura) */
+.brand-hero__belt{
+  height: 56px;
+  background: var(--bg);
+  border-top: 0; /* limpia bordes anteriores si los tenías */
+}
+
+/* ====== Pie de página ====== */
+.brand-footer{
+  position: relative;
+  background: var(--bg); /* en dark queda negro; en light gris muy oscuro */
+  display: grid;
+  place-items: center;
+  padding: clamp(24px, 6vw, 60px) 1rem;
+  min-height: clamp(160px, 28vw, 280px);
+}
+
+.brand-footer__mascot{
+  width: clamp(160px, 28vw, 360px);
+  height: auto;
+  filter: drop-shadow(0 18px 28px rgba(0,0,0,.5));
+  user-select: none;
+  pointer-events: none;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+.hero {
+  background: var(--carambar-yellow);
+  padding: 3rem 1rem;
+  text-align: center;
+  border-bottom: 8px solid var(--carambar-red);
+}
+.hero h1 { margin: 0; font-size: clamp(2rem, 3.5vw, 3rem); }
+.hero h2 { margin: .25rem 0 0; font-weight: 600; opacity: .9; }
+.container { max-width: 860px; margin: 2rem auto; padding: 0 1rem; }
+.card {
+  background: var(--paper);
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,.07);
+  text-align: center;
+}
+.question { font-size: clamp(1.25rem, 2.2vw, 1.7rem); margin: 0 0 1rem; }
+.answer { font-size: clamp(1.05rem, 1.8vw, 1.25rem); color: #444; min-height: 1.25em; }
+button {
+  padding: .9rem 1.2rem;
+  font-weight: 700;
+  border: 0;
+  border-radius: 999px;
+  background: var(--carambar-red);
+  color: #fff;
+  cursor: pointer;
+  transition: transform .06s ease, filter .15s ease;
+}
+button:hover { filter: brightness(1.05); transform: translateY(-1px); }
+button:active { transform: translateY(0); }
+.note { text-align: center; opacity: .75; margin-top: 1rem; }
+.footer { text-align: center; padding: 2rem; opacity: .65; }
+@media (max-width: 420px) { .card { padding: 1.4rem; } button { width: 100%; } }
