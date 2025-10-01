@@ -32,7 +32,6 @@ Dans `index.html`, définir la base de l’API **production** (Render) :
 En développement local (API lancée en local) :
 
 html
-Copiar código
 <script>window.API_BASE = "http://127.0.0.1:3000";</script>
 Important : sur GitHub Pages, utiliser https pour éviter le “mixed content”.
 
@@ -49,8 +48,6 @@ Repo → Settings → Pages → Deploy from a branch → main / (root).
 Ouvrir l’URL fournie (voir ci-dessus “Démo”).
 
 🗂️ Structure du projet
-arduino
-Copiar código
 carambar-jokes-front/
  ├─ index.html        # page statique + config API_BASE
  ├─ styles.css        # styles (light/dark via variables CSS)
